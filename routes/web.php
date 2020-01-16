@@ -25,3 +25,8 @@ Route::get('/shopping-cart', 'ProductController@showCart')->name('cart.show');
 Route::get('/checkout-cart/{amount}', 'ProductController@checkout')->name('cart.checkout')->middleware('auth');
 Route::post('/charge', 'ProductController@charge')->name('cart.charge');
 Route::get('/orders', 'OrderController@index')->name('order.index');
+
+
+Route::get('/users','PaymentController@index');
+Route::post('/users/store', 'PaymentController@store')->name('user.add');
+Route::get('/users/{id}','PaymentController@show')->name('user.show');

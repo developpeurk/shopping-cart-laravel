@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Payment;
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -39,4 +42,5 @@ class HomeController extends Controller
         $latestProducts = Product::latest()->take(3)->get(); 
         return view('store', compact('latestProducts'));
        }
+
 }
